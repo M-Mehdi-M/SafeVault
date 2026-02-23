@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/auth_background"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/bgGlow"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:alpha="0.15"
+        android:background="@drawable/bg_auth_circle"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:id="@+id/ivLock"
+        android:layout_width="@dimen/auth_logo_size"
+        android:layout_height="@dimen/auth_logo_size"
+        android:src="@drawable/ic_lock"
+        android:contentDescription="@null"
+        android:padding="24dp"
+        android:background="@drawable/bg_auth_circle"
+        app:layout_constraintBottom_toBottomOf="@id/bgGlow"
+        app:layout_constraintEnd_toEndOf="@id/bgGlow"
+        app:layout_constraintStart_toStartOf="@id/bgGlow"
+        app:layout_constraintTop_toTopOf="@id/bgGlow" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/auth_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bgGlow" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/auth_subtitle"
+        android:textColor="#99FFFFFF"
+        android:textSize="@dimen/text_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <ImageView
+        android:id="@+id/ivFingerprint"
+        android:layout_width="@dimen/icon_lg"
+        android:layout_height="@dimen/icon_lg"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_fingerprint"
+        android:contentDescription="@string/auth_fingerprint_prompt"
+        app:tint="@color/md_theme_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+    <TextView
+        android:id="@+id/tvFingerprintHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/auth_fingerprint_prompt"
+        android:textColor="#80FFFFFF"
+        android:textSize="@dimen/text_caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivFingerprint" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/Widget.SafeVault.TextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xl"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="@dimen/spacing_xl"
+        android:hint="@string/auth_pin_hint"
+        app:boxStrokeColor="@color/md_theme_primary"
+        app:hintTextColor="@color/md_theme_primary"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFingerprintHint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="#60FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUnlock"
+        style="@style/Widget.SafeVault.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/spacing_xl"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_xl"
+        android:text="@string/auth_unlock"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_body"
+        app:cornerRadius="@dimen/button_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPassword" />
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:textColor="@color/md_theme_error"
+        android:textSize="@dimen/text_caption"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUnlock" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

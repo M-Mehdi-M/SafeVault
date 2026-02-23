@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.SafeVault.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:rippleColor="@color/ripple_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_md">
+
+        <View
+            android:id="@+id/categoryIconBg"
+            android:layout_width="@dimen/category_icon_size"
+            android:layout_height="@dimen/category_icon_size"
+            android:background="@drawable/bg_category_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCategoryIcon"
+            android:layout_width="@dimen/icon_sm"
+            android:layout_height="@dimen/icon_sm"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/categoryIconBg"
+            app:layout_constraintEnd_toEndOf="@id/categoryIconBg"
+            app:layout_constraintStart_toStartOf="@id/categoryIconBg"
+            app:layout_constraintTop_toTopOf="@id/categoryIconBg" />
+
+        <TextView
+            android:id="@+id/tvItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/categoryIconBg"
+            app:layout_constraintTop_toTopOf="@id/categoryIconBg" />
+
+        <TextView
+            android:id="@+id/tvItemCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="@dimen/text_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/categoryIconBg"
+            app:layout_constraintTop_toBottomOf="@id/tvItemTitle" />
+
+        <TextView
+            android:id="@+id/tvItemDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="2dp"
+            android:textColor="?attr/colorOutline"
+            android:textSize="@dimen/text_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/categoryIconBg"
+            app:layout_constraintTop_toBottomOf="@id/tvItemCategory"
+            app:layout_constraintBottom_toBottomOf="@id/categoryIconBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

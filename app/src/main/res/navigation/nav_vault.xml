@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_vault"
+    app:startDestination="@id/vaultListFragment">
+
+    <fragment
+        android:id="@+id/vaultListFragment"
+        android:name="project.safevault.ui.vault.VaultListFragment"
+        android:label="@string/nav_vault"
+        tools:layout="@layout/fragment_vault_list">
+        <action
+            android:id="@+id/action_vaultList_to_addItem"
+            app:destination="@id/addItemFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_vaultList_to_detail"
+            app:destination="@id/vaultDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="project.safevault.ui.vault.AddItemFragment"
+        android:label="@string/add_item_title"
+        tools:layout="@layout/fragment_add_item">
+        <argument
+            android:name="scannedText"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="scannedImagePath"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="editItemId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vaultDetailFragment"
+        android:name="project.safevault.ui.vault.VaultDetailFragment"
+        android:label="Item Details"
+        tools:layout="@layout/fragment_vault_detail">
+        <argument
+            android:name="itemId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scannerFragment"
+        android:name="project.safevault.ui.scanner.ScannerFragment"
+        android:label="@string/nav_scan"
+        tools:layout="@layout/fragment_scanner">
+        <action
+            android:id="@+id/action_scanner_to_addItem"
+            app:destination="@id/addItemFragment"
+            app:popUpTo="@id/scannerFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="project.safevault.ui.settings.SettingsFragment"
+        android:label="@string/nav_settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>
+

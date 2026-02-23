@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SafeVault" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_on_primary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_on_primary_container</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_on_secondary_container</item>
+        <item name="colorTertiary">@color/md_theme_tertiary</item>
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_on_background</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_on_surface_variant</item>
+        <item name="colorOutline">@color/md_theme_outline</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.SafeVault" parent="Base.Theme.SafeVault" />
+
+    <style name="Theme.SafeVault.Auth" parent="Base.Theme.SafeVault">
+        <item name="android:colorBackground">@color/auth_background</item>
+        <item name="colorSurface">@color/auth_background</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+    </style>
+
+    <style name="Widget.SafeVault.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/md_theme_primary</item>
+        <item name="android:textColor">@color/md_theme_on_primary</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.SafeVault.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/md_theme_primary</item>
+        <item name="android:textColor">@color/md_theme_primary</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.SafeVault.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <style name="Widget.SafeVault.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+</resources>
